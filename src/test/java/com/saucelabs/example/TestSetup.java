@@ -49,7 +49,7 @@ public class TestSetup {
   private AndroidDriver createDriver(String platformName, String platformVersion, String deviceName, String methodName) throws MalformedURLException {
   	
       DesiredCapabilities capabilities = new DesiredCapabilities();
-      capabilities.setCapability("testobject_api_key", "ADD_API_KEY_HERE");
+      capabilities.setCapability("testobject_api_key", System.getEnv("TESTOBJECT_API_KEY"));
       capabilities.setCapability("deviceName", deviceName);
       capabilities.setCapability("platformVersion", platformVersion);
       capabilities.setCapability("platformName", platformName);
